@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ChickLit Cover Generator!</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='css/spectrum.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+<div class="container" id="app">
+    <div class="row">
+        <div class="col">
+            <h1>ChickLit Cover Generator!</h1>
+            <p class="content">To save your cover, simply right-click on the image and select "Save image as..."
+                <br/><br/>
+                (A note for mobile users: If you can't save the image, just take a screenshot. I know it's not working
+                right, and I'm working on it.)</p>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-5 col-md-push-7 right-content">
+            <div class="form">
+                <h2>Pick the background color:</h2>
+                <form>
+                    <input title="background-color" type='text' class="basic" v-model="styleObject.backgroundColor"/>
+                    <em id='basic-log'></em>
+                </form>
+
+                <h2>Pick the font color:</h2>
+                <div class="font-colors">
+                    <div class="white" v-on:click="whiteFont">white</div>
+                    <div class="turq" v-on:click="turqFont">turquoise</div>
+                    <div class="brown" v-on:click="brownFont">brown</div>
+                </div>
+
+                <h2>Pick the cover gem:</h2>
+                <form>
+                    <select title="gem" v-model="graphic" @change="onChange">
+                        <option v-for="value in imgObject" v-bind:value="value.url">{{value.name}}</option>
+                    </select>
+                </form>
+
+                <h2>Set the title:</h2>
+                <form>
+                    <input title="title" id="title" type="text" v-model="title"/>
+                </form>
+
+                <h2>Set the author:</h2>
+                <form>
+                    <input title="authors" id="authors" type="text" v-model="authors"/>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-7 col-md-pull-5 left-content">
+            <div class="meme" id="meme">
+                <div class="panel" v-bind:style="styleObject">
+                    <div class="title" v-bind:style="fontObject">{{ title }}</div>
+                    <div class="outer-div">
+                        <img class="inner-div" v-bind:src="graphic"/>
+                    </div>
+                    <div class="authors" v-bind:style="fontObject">{{ authors }}</div>
+                </div>
+            </div>
+            <div id="cover"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div id="modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2>About ChickLit Cover Generator</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Chick lit is the expanded universe of Sex and the City. It’s the foundational text of
+                                modern feminine aspirational consumerism. It’s not being able to afford Jimmy Choo
+                                shoes. It’s wearing a real Burberry scarf with a knock-off Versace handbag and having a
+                                reason for doing that at hand. It’s every yogurt commercial you’ve ever seen. It’s pink
+                                and sparkly girl-versions of everything. It’s the fantasy of eventually getting your
+                                shit together and your eyeliner straight on the same day.</p>
+
+                            <p>And you know what? It’s fun. It’s genre fiction. It’s light and playful and cliche. It’s
+                                fiction that falls somewhere between romance novels and fashion magazines, and it’s a
+                                whole bunch of stories written by women, for women, and that makes the marketing and
+                                presentation exactly as problematic as it sounds.</p>
+
+                            <p>Which is what makes it all so easy to parody.</p>
+
+                            <p>Inspired by Contrapoints video <a href="https://www.youtube.com/watch?v=QuN6GfUix7c">"The
+                                Left"</a>, in what is assuredly a massive case of missing the point. Nonetheless,
+                                Natalie makes fantastic videos and you should watch them.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <footer><a href="https://www.linkedin.com/in/meredithmatthews/">Build by Mer</a> | <a data-toggle="modal"
+                                                                                                  href="#modal">About</a>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<script src='js/jquery.min.js'></script>
+<script src='js/vue.min.js'></script>
+<script src='js/spectrum.min.js'></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src='js/html2canvas.js'></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>

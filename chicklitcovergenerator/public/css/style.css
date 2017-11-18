@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Homemade Apple';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Homemade Apple Regular'), local('HomemadeApple-Regular'), url(https://fonts.gstatic.com/s/homemadeapple/v8/yg3UMEsefgZ8IHz_ryz86IpVThvdH1ZERIrfWb3R7t4.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+    font-family: 'Spectral SC';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Spectral SC Regular'), local('SpectralSC-Regular'), url(https://fonts.gstatic.com/s/spectralsc/v2/yJ95fCBFs0v33GTJdYTk_44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+body {
+  background-image: url("../img/deb07ce3604064f1eb3860a9004422a6.jpg");
+}
+
+a{
+  color: #602c25;
+}
+
+a:hover, a:active, a:focus {
+  color: #087E8B;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Homemade Apple", cursive;
+      font-size: 48px;
+      margin-bottom: 0;
+      color: #602c25;
+}
+
+h2 {
+  font-family: "Spectral SC", serif;
+  line-height: 1.4em;
+  color: #602c25;
+}
+
+.container {
+
+}
+
+.content {
+  text-align: center;
+  padding: 30px;
+}
+
+.meme,
+.form {
+  width: 530px;
+
+}
+
+select, input {
+  font-size: 16px;
+}
+
+.panel {
+  border: 2px solid #000;
+  width: 530px;
+  height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  position: relative;
+  order: 1;
+  width: 530px;
+  z-index: 10;
+  text-align: center;
+  font-size: 61px;
+  font-weight: 700;
+  line-height: 1.4em;
+  padding: 25px 15px 0 15px;
+  color: #fff;
+  font-family: "Homemade Apple", cursive;
+      word-wrap: break-word;
+}
+
+.authors {
+    position: absolute;
+    order: 1;
+    z-index: 10;
+    align-self: flex-end;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4em;
+    padding: 25px 15px 15px 15px;
+    color: #fff;
+    font-family: "Spectral SC", serif;
+    width: 530px;
+        word-wrap: break-word;
+}
+
+.outer-div {
+    position: relative;
+    order: 2;
+    display: flex;
+    align-self: flex-end;
+    z-index: 0;
+    width: 530px;
+}
+
+.inner-div {
+    margin: 0 auto;
+    max-width: 500px;
+    max-height: 500px;
+    align-self: flex-end;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+.font-colors div {
+    display: inline;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-family: "Spectral SC", serif;
+}
+
+.turq {
+  background-color: #087E8B;
+  color: #fff;
+}
+
+.white {
+  background-color: #fff;
+  color: #602c25;
+}
+
+.brown {
+  background-color: #602c25;
+  color: #fff;
+}
+
+canvas {
+  position: absolute;
+    top: 0;
+    z-index: 20;
+}
+
+.modal {
+
+}
+
+footer {
+    text-align: center;
+    padding: 50px 30px 30px 30px;
+    font-size: 24px;
+    font-family: "Spectral SC", serif;
+    line-height: 1.4em;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 992px) {
+    
+    h2 {
+      text-align: center;
+    }
+
+    .meme, .form, form {
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    select, input {
+      font-size: 24px;
+    }
+
+    .left-content{
+      order: 3;
+    }
+
+    .right-content{
+      order: 2;
+    }
+}
