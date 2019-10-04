@@ -75,14 +75,17 @@ $('.basic').spectrum({
 function onChange() {
     var scrollPos = document.body.scrollTop;
     $('canvas').remove();
-    html2canvas($('.panel'), {
-        onrendered: function (canvas) {
-            document.getElementById("cover").appendChild(canvas);
-            var pos = $('.panel').position();
-            $('canvas').css('top', pos.top).css('left', pos.left);
-            window.scrollTo(0, scrollPos);
-        }
-    });
+    setTimeout(function () {
+        html2canvas($('.panel'), {
+            onrendered: function (canvas) {
+                document.getElementById("cover").appendChild(canvas);
+                var pos = $('.panel').position();
+                $('canvas').css('top', pos.top).css('left', pos.left);
+                window.scrollTo(0, scrollPos);
+            }
+        });
+    }, 10);
+
 }
 
 $('#title, #authors').keyup(function () {

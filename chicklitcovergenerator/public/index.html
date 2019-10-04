@@ -51,7 +51,7 @@
 
                 <h2>Pick the cover gem:</h2>
                 <form>
-                    <select title="gem" v-model="graphic" @change="onChange">
+                    <select title="gem" v-model="graphic" @change="onChange()">
                         <option v-for="value in imgObject" v-bind:value="value.url">{{value.name}}</option>
                     </select>
                 </form>
